@@ -6,7 +6,8 @@ import { TiLocationArrow } from "react-icons/ti";
 
 import Button from "./Button";
 
-const navItems = ["Nexus", "Vault", "Prologue", "About", "Contact"];
+// Itens do menu atualizados para o contexto do evento
+const navItems = ["Sobre", "Atrações", "Local", "Contato"];
 
 const NavBar = () => {
   // State for toggling audio and visual indicator
@@ -38,15 +39,12 @@ const NavBar = () => {
 
   useEffect(() => {
     if (currentScrollY === 0) {
-      // Topmost position: show navbar without floating-nav
       setIsNavVisible(true);
       navContainerRef.current.classList.remove("floating-nav");
     } else if (currentScrollY > lastScrollY) {
-      // Scrolling down: hide navbar and apply floating-nav
       setIsNavVisible(false);
       navContainerRef.current.classList.add("floating-nav");
     } else if (currentScrollY < lastScrollY) {
-      // Scrolling up: show navbar with floating-nav
       setIsNavVisible(true);
       navContainerRef.current.classList.add("floating-nav");
     }
@@ -71,14 +69,21 @@ const NavBar = () => {
         <nav className="flex size-full items-center justify-between p-4">
           {/* Logo and Product button */}
           <div className="flex items-center gap-7">
-            <img src="/img/logo.png" alt="logo" className="w-10" />
+            <img src="/img/uaradei-logo.png" alt="logo" className="w-20" />
 
-            <Button
-              id="product-button"
-              title="Products"
-              rightIcon={<TiLocationArrow />}
-              containerClass="bg-blue-50 md:flex hidden items-center justify-center gap-1"
-            />
+            <a
+              href="https://www.sympla.com.br/evento/wake-up-brasilia/3193354"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hidden md:block"
+            >
+              <Button
+                id="product-button"
+                title="Ingressos"
+                rightIcon={<TiLocationArrow />}
+                containerClass="bg-blue-50 flex items-center justify-center gap-1"
+              />
+            </a>
           </div>
 
           {/* Navigation Links and Audio Button */}
@@ -87,7 +92,7 @@ const NavBar = () => {
               {navItems.map((item, index) => (
                 <a
                   key={index}
-                  href={`#${item.toLowerCase()}`}
+                  href={`#${item.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "")}`}
                   className="nav-hover-btn"
                 >
                   {item}
