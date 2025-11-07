@@ -154,12 +154,18 @@ const Hero = () => {
               DIAS 13 a 16 de novembro <br /> Unleash the Play Economy
             </p>
 
-            <Button
-              id="watch-trailer"
-              title="Watch trailer"
-              leftIcon={<TiLocationArrow />}
-              containerClass="bg-yellow-300 flex-center gap-1"
-            />
+            <a
+              href="https://www.sympla.com.br/evento/wake-up-brasilia/3193354"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Button
+                id="watch-trailer"
+                title="Quero o meu ingresso"
+                leftIcon={<TiLocationArrow />}
+                containerClass="bg-yellow-300 flex-center gap-1"
+              />
+            </a>
           </div>
         </div>
       </div>

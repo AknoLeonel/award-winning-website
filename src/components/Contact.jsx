@@ -42,8 +42,15 @@ const Contact = () => {
             title="você atl<b>e</b>ta, faça <br /> sua inscriç<b>ão <br /> logo abaix<b>o</b>"
             className="special-font !md:text-[6.2rem] w-full font-zentry !text-5xl !font-black !leading-[.9]"
           />
-
-          <Button title="Ingresso atleta" containerClass="mt-10 cursor-pointer" />
+          <a
+              href="https://www.sympla.com.br/evento/wake-up-brasilia/3193354"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hidden md:block"
+            >
+              <Button title="Garantir ingresso" containerClass="mt-10 cursor-pointer" />
+            </a>
+          
         </div>
       </div>
     </div>
