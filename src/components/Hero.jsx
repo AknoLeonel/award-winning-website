@@ -151,7 +151,8 @@ const Hero = () => {
             </h1>
 
             <p className="mb-5 max-w-64 font-robert-regular text-blue-100">
-              DIAS 13 a 16 de novembro <br /> Unleash the Play Economy
+              Dias 13 a 16 de novembro.<br /> Venha participar do maior festival
+              esportivo do Centro-Oeste!
             </p>
 
             <a
