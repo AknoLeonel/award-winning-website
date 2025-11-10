@@ -24,10 +24,10 @@ const Hero = () => {
   };
 
   useEffect(() => {
-    if (loadedVideos === totalVideos - 1) {
-      setLoading(false);
-    }
-  }, [loadedVideos]);
+  if (loadedVideos >= 1) { // Basta 1 vídeo carregar para liberar a tela
+    setLoading(false);
+  }
+}, [loadedVideos]);
 
   const handleMiniVdClick = () => {
     setHasClicked(true);
